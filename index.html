@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Passenger Flow Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Passenger Flow Prediction</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  </body>
+</html>

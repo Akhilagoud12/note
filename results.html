@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .model-result {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .model-result img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .go-back {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .go-back:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    
+    <div class="results-container">
+        <!-- MLP Results -->
+        <div class="model-result">
+            <h2>MLP</h2>
+            <img src="data:image/png;base64,{{ plot_mlp }}" alt="MLP Prediction Plot">
+            <p><strong>RMSE:</strong> {{ rmse_mlp }}</p>
+            <p><strong>MAE:</strong> {{ mae_mlp }}</p>
+            <p><strong>Accuracy:</strong> {{ acc_mlp_100 }}%</p>
+        </div>
+
+        <!-- Bidirectional LSTM Results -->
+        <div class="model-result">
+            <h2>Bidirectional LSTM</h2>
+            <img src="data:image/png;base64,{{ plot_lstm }}" alt="Bidirectional LSTM Prediction Plot">
+            <p><strong>RMSE:</strong> {{ rmse_lstm }}</p>
+            <p><strong>MAE:</strong> {{ mae_lstm }}</p>
+            <p><strong>Accuracy:</strong> {{ acc_lstm_100 }}%</p>
+        </div>
+
+        <!-- Gradient Boosting Regressor Results -->
+        <div class="model-result">
+            <h2>Gradient Boosting Regressor</h2>
+            <img src="data:image/png;base64,{{ plot_gbr }}" alt="Gradient Boosting Regressor Prediction Plot">
+            <p><strong>RMSE:</strong> {{ rmse_gbr }}</p>
+            <p><strong>MAE:</strong> {{ mae_gbr }}</p>
+            <p><strong>Accuracy:</strong> {{ acc_gbr_100 }}%</p>
+        </div>
+    </div>
+
+    <a href="/" class="go-back">Go Back</a>
+</body>
+</html>

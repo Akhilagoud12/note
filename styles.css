@@ -1,0 +1,48 @@
+body {
+    background-image: url('https://www.orientrailjourneys.com/storage/blogs/b0da33bb8a433187b6a897bdf7e373fd.jpg');
+    background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: rgb(252, 252, 252);
+  }
+  
+
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  input[type="file"] {
+    margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
